@@ -6,10 +6,8 @@ const scoreDisplay = document.getElementById("score");
 const newGameButton = document.getElementById("newGameButton");
 
 let targetColor;
-let score = 0;
 
 /*The color options*/
-
 function assignColors () {
     let shuffledColors = [...colors].sort();
     colorOptions.forEach((button, index) => {
@@ -23,6 +21,7 @@ function setTargetColor() {
     targetColor = colors[Math.floor(Math.random() * colors.length)];
     colorDisplay.style.backgroundColor = targetColor;
 }
+
 /*Function to check the user's guesses*/
 function guesses(selectedColor) {
     if (selectedColor === targetColor) {
@@ -38,7 +37,10 @@ function guesses(selectedColor) {
 }
 newGameButton.addEventListener("click", newGame);
 
+/*Function to run the game*/
 function newGame() {
+    score = 0; // Reset score to zero
+    scoreDisplay.textContent = score;
     setTargetColor();
     assignColors();
     gameStatus.textContent = "";
