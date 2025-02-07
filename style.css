@@ -19,7 +19,7 @@ body {
     width: 100px;
     height: 100px;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.1s;
 }
 
 .colorOption:hover {
